@@ -21,7 +21,10 @@ matrix:
               $msys2 pacman-key --recv F7FD5492264BB9D0
               $msys2 pacman-key --lsign F7FD5492264BB9D0
               $msys2 pacman --noconfirm -U https://downloads.devkitpro.org/devkitpro-keyring-r1.787e015-2-any.pkg.tar.xz
-              $msys2 echo -e "\n[dkp-libs]\nServer = https://downloads.devkitpro.org/packages \n[dkp-windows]\nServer = https://downloads.devkitpro.org/packages/windows" >> /C/tools/msys64/etc/pacman.conf
+              $msys2 echo "[dkp-libs]" >> /C/tools/msys64/etc/pacman.conf
+              $msys2 echo "Server = https://downloads.devkitpro.org/packages" >> /C/tools/msys64/etc/pacman.conf 
+              $msys2 echo "[dkp-windows]" >> /C/tools/msys64/etc/pacman.conf
+              $msys2 echo "Server = https://downloads.devkitpro.org/packages/windows" >> /C/tools/msys64/etc/pacman.conf
               $msys2 pacman -Syu --noconfirm
               ## Install more MSYS2 packages from https://packages.msys2.org/base here
               $msys2 pacman --sync --noconfirm --needed switch-dev
