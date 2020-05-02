@@ -40,7 +40,7 @@ matrix:
               ## export MAKE=mingw32-make  # so that Autotools can find it
               ;;
           esac
-
+        - taskkill //IM bash.exe //F
       before_cache:
         - |-
           case $TRAVIS_OS_NAME in
@@ -57,4 +57,3 @@ matrix:
           - /C/tools/msys64
       script:
         - $msys2 make
-        - $msys2 ps -W | sort
