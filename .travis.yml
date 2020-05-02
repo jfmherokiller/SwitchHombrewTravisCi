@@ -6,3 +6,6 @@ sudo: true
 before_install:
  - curl -sLO https://github.com/devkitPro/pacman/releases/download/devkitpro-pacman-1.0.1/devkitpro-pacman.deb && sudo dpkg -i devkitpro-pacman.deb && rm devkitpro-pacman.deb
  - sudo dkp-pacman --sync --noconfirm $(sudo dkp-pacman -Ssq switch-*)
+ - pip install cmake
+script:
+ - source /etc/profile.d/devkit-env.sh && make
