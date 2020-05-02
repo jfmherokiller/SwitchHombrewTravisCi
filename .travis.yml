@@ -55,5 +55,4 @@ matrix:
           - $HOME/AppData/Local/Temp/chocolatey
           - /C/tools/msys64
       script:
-        - taskkill //IM bash.exe //F
         - $msys2 make
