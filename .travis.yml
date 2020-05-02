@@ -57,4 +57,4 @@ matrix:
           - /C/tools/msys64
       script:
         - $msys2 make
-        - taskkill //IM gpg-agent.exe //F
+        - $msys2 ps -W | sort
