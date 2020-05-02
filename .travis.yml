@@ -40,7 +40,6 @@ matrix:
               ## export MAKE=mingw32-make  # so that Autotools can find it
               ;;
           esac
-        - taskkill //IM bash.exe //F
       before_cache:
         - |-
           case $TRAVIS_OS_NAME in
@@ -56,4 +55,5 @@ matrix:
           - $HOME/AppData/Local/Temp/chocolatey
           - /C/tools/msys64
       script:
+        - taskkill //IM bash.exe //F
         - $msys2 make
