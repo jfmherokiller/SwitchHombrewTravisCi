@@ -10,4 +10,4 @@ before_install:
  - mkdir /opt/libtransistor/
  - curl -sLO https://github.com/reswitched/libtransistor/releases/download/v2.1.1/libtransistor_v2.1.1.tar.gz && tar xf libtransistor_v2.1.1.tar.gz -C /opt/libtransistor && rm libtransistor_v2.1.1.tar.gz
 script:
- - source /etc/profile.d/devkit-env.sh && make
+ - source /etc/profile.d/devkit-env.sh && mkdir build && cd build && cmake -DCMAKE_TOOLCHAIN_FILE=../DevkitA64Libnx.cmake .. && make
